@@ -75,7 +75,7 @@ public class Test_Nfs3 extends NfsTestBase {
         try {
             NfsTime guardTime = new NfsTime( createRes.getAttributes().getCtime().getTimeInMillis(), false );
             Nfs3SetAttrResponse setAttrResponse = nfs3.setAttr(new NfsSetAttrRequest(createRes.getFileHandle(),
-                    new NfsSetAttributes(null, null, null, new Long(1024), null, null),
+                    new NfsSetAttributes(null, null, null, 1024L, null, null),
                     guardTime,
                     new CredentialUnix(), 3));
 
@@ -83,7 +83,7 @@ public class Test_Nfs3 extends NfsTestBase {
 
             guardTime = new NfsTime( 0, false );
             setAttrResponse = nfs3.setAttr(new NfsSetAttrRequest(createRes.getFileHandle(),
-                    new NfsSetAttributes(null, null, null, new Long(1024), null, null),
+                    new NfsSetAttributes(null, null, null, 1024L, null, null),
                     guardTime,
                     new CredentialUnix(), 3));
 
@@ -101,13 +101,13 @@ public class Test_Nfs3 extends NfsTestBase {
         int len = fileHandle.length;
 
         StringBuffer buf = new StringBuffer();
-        buf.append("file handle: [" + String.valueOf(len) + "] ");
+        buf.append("file handle: [" + len + "] ");
         for (byte e : fileHandle) {
-            buf.append((int) e);
+            buf.append(e);
             buf.append(" ");
         }
 
-        System.out.println(buf.toString());
+        System.out.println(buf);
     }
 
 //    @Test

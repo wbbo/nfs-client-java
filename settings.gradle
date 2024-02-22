@@ -15,3 +15,5 @@
 rootProject.name = 'nfs-client'
 include 'tools'
 include 'readingTools'
+include 'client-demo'
+

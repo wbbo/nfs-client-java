@@ -37,10 +37,9 @@ dependencies {
 
     testRuntimeOnly "org.slf4j:slf4j-simple:1.7.36"
 }
-
 shadowJar {
     destinationDirectory = file("${buildDir}/shadow")
-    classifier ''
+//    classifier ''
     manifest {
         attributes 'Implementation-Version': project.version
     }

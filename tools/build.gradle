@@ -37,13 +37,13 @@ dependencies {
     testRuntimeOnly "org.slf4j:slf4j-simple:1.7.36"
 }
 
-shadowJar {
-    destinationDirectory = file("${buildDir}/shadow")
-    classifier ''
-    manifest {
-        attributes 'Implementation-Version': project.version
-    }
-}
+//shadowJar {
+//    destinationDirectory = file("${buildDir}/shadow")
+//    classifier ''
+//    manifest {
+//        attributes 'Implementation-Version': project.version
+//    }
+//}
 
 artifacts {
     tools shadowJar // tells root project to include in tools/ dir of distribution
